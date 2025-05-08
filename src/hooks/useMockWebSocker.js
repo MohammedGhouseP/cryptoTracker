@@ -1,9 +1,6 @@
-// src/hooks/useMockWebSocket.js
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateOne } from '../features/crypto/cryptoSlice';
-
-// pull current full series from store
 import { selectAllCoins } from '../features/crypto/cryptoSlice';
 
 export default function useMockWebSocket(symbols) {
@@ -17,8 +14,6 @@ export default function useMockWebSocket(symbols) {
         const prev = coins.find(c => c.symbol === sym);
         const newPrice = +((Math.random() * 100000).toFixed(2));
         const newChange1h = +(((Math.random() - 0.5) * 2).toFixed(2));
-
-        // build new sparkline array by shifting older points
         const prevSeries = prev?.sparkline || Array(20).fill(prev?.price || newPrice);
         const nextSeries = [...prevSeries.slice(1), newPrice];
 

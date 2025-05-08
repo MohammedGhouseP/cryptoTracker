@@ -15,8 +15,8 @@ export default function CryptoTable() {
         idx: i + 1,
         priceColor: priceUp ? "text-green-600" : "text-red-600",
         changeColor: c.change1h >= 0 ? "text-green-600" : "text-red-600",
-        spark: c.sparkline, // or whatever field you’re storing spark data on
-        lastPrice: c.price, // so next render we can compare
+        spark: c.sparkline, 
+        lastPrice: c.price, 
       };
     });
   }, [coins]);

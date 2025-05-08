@@ -15,9 +15,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip)
 export default function Sparkline({ data = [], direction }) {
   const chartRef = useRef(null);
 
-  // build labels only if data array exists
   const labels = data.map((_, i) => i);
-
   const cfg = {
     data: {
       labels,
